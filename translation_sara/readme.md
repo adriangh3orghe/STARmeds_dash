@@ -7,3 +7,7 @@ Using a csv file with translation, which I created in the google sheet below - t
 
 Link to googlesheet with translation function:
 https://docs.google.com/spreadsheets/d/11DncuKYrns6HTVeMt9rR50tH3TyhjbwYlw4dcGwyAMY/edit?usp=sharing
+
+Versions:
+app3 -> first template
+app4 -> new template with navigation bar and new theme
