@@ -21,7 +21,7 @@ library(bslib)
 
 #i18n <- Translator$new(translation_json_path='translation.json')
 #i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
-i18n <- Translator$new(translation_csvs_path = "/Users/sara/OneDrive - Imperial College London/My folder/shiny")
+i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
 
 i18n$set_translation_language('en')
 
@@ -71,7 +71,7 @@ ui <- fluidPage(
                                  
                                  p(i18n$t("The final tab “Results” produces a summary of expected costs based on the information you have provided.")),
                       
-                                 p("Please report any issues at ",tags$a(href="bla@bla.com", "support@starmeds.id")),
+                                 p(i18n$t("Please report any issues at"), tags$a(href="bla@bla.com", "support@starmeds.id")),
                       
                                  p(tags$a(href="https://starmeds.id/", "STARmeds website"))
                   ),
