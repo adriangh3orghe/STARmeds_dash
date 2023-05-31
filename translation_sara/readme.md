@@ -13,3 +13,5 @@ Versions:
 app3 -> first template
 
 app4 -> new template with navigation bar and new theme
+
+app4 download + output_report2 -> new template with navigation bar and new theme + results download button
