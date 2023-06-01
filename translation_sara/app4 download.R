@@ -24,8 +24,8 @@ library(png)
 
 
 #i18n <- Translator$new(translation_json_path='translation.json')
-#i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
-i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
+i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
+#i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
 
 i18n$set_translation_language('en')
 
@@ -391,6 +391,10 @@ server <- function(input, output) {
     
     #Visuals
     output$res_pie_cost_phase <- renderPlot({
+      library(ggplot2)
+      
+      # Create the plot
+      plot2 <- 
       ggplot(dat8(),
              aes(x = "" , y = sum_prop, fill = fct_inorder(phase))) +
         geom_col(width = 1, color = 1) +
@@ -402,26 +406,49 @@ server <- function(input, output) {
                          size = 4.5, nudge_x = 1, show.legend = FALSE) +
         guides(fill = guide_legend(title = "Phase")) +
         theme_void()
+      # Display the plot
+      print(plot2)
+      
+      # Save the plot using ggsave and print it
+      ggsave(filename = "res_pie_cost_phase.png", plot = print(plot2), dpi = 300)
+      
+      # Return the plot for rendering (optional)
+      plot
     }
     )
-
-      output$res_pie_cost_item <- renderPlot({
+    
+    
+    
+    output$res_pie_cost_item <- renderPlot({
+      library(ggplot2)
       
-      ggplot(dat9(),
-             aes(x = "" , y = sum_prop, fill = fct_inorder(cost.item))) +
+      # Create the plot
+      plot <- ggplot(dat9(),
+                     aes(x = "", y = sum_prop, fill = fct_inorder(cost.item))) +
         geom_col(width = 1, color = 1) +
         coord_polar(theta = "y") +
         labs(title = i18n$t("Cost breakdown by cost item")) +
         scale_fill_brewer(palette = "Pastel1") +
-        geom_label_repel(dat9(),
-                         mapping=aes(y = pos, label = paste0(sum_prop, "%")),
-                         size = 4.5, nudge_x = 1, show.legend = FALSE) +
+        geom_label_repel(
+          dat9(),
+          mapping = aes(y = pos, label = paste0(sum_prop, "%")),
+          size = 4.5, nudge_x = 1, show.legend = FALSE
+        ) +
         guides(fill = guide_legend(title = i18n$t("Cost item"))) +
         theme_void()
+      
+      # Display the plot
+      print(plot)
+      
+      # Save the plot using ggsave and print it
+      ggsave(filename = "res_pie_cost_item.png", plot = print(plot), dpi = 300)
+      
+      # Return the plot for rendering (optional)
+      plot
     })
-      ggsave("myplot_item.png")
-      
-      
+    
+      #ggsave("myplotplot.png", plot = plot1, device = 'png')
+
     # Download handler
     output$downloadBtn <- downloadHandler(
       filename = "output_data.pdf",  # Specify the filename for the downloaded PDF file

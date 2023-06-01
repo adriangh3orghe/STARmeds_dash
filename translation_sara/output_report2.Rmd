@@ -18,6 +18,13 @@ knitr::kable(df8$data)
 ```{r, echo=FALSE, results='asis'}
 knitr::kable({df9$data})
 ```
+
 ## Figure 1
 ```{r, echo=FALSE, results='asis'}
-knitr::include_graphics("myplot_item.png")
+knitr::include_graphics("res_pie_cost_phase.png")
+```
+
+## Figure 2
+```{r, echo=FALSE, results='asis'}
+knitr::include_graphics("res_pie_cost_item.png")
+```
