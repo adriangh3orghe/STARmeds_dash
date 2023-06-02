@@ -24,8 +24,8 @@ library(png)
 
 
 #i18n <- Translator$new(translation_json_path='translation.json')
-i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
-#i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
+#i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
+i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
 
 i18n$set_translation_language('en')
 
@@ -132,10 +132,10 @@ ui <- fluidPage(
         tabPanel(i18n$t("Visuals"),
                  plotOutput("res_pie_cost_phase"),
                  plotOutput("res_pie_cost_item"))
-    ),            
+    ),    
+  downloadButton("downloadBtn", "Download Results PDF"),
   )
   ),
-downloadButton("downloadBtn", "Download Results"),
 )
 # Define server logic
 server <- function(input, output) {
