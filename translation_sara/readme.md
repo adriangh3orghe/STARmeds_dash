@@ -10,8 +10,4 @@ https://docs.google.com/spreadsheets/d/11DncuKYrns6HTVeMt9rR50tH3TyhjbwYlw4dcGwy
 
 Versions:
 
-app3 -> first template
-
-app4 -> new template with navigation bar and new theme
-
-app4 download + output_report2 -> new template with navigation bar and new theme + results download button
+app4_2 -> new version with more tables, translation and report in english and indonesian
