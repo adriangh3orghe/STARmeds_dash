@@ -1,0 +1,95 @@
+---
+title:
+header-includes: 
+   \usepackage{graphicx}
+   \usepackage{fancyhdr}
+   \pagestyle{fancy}
+   \setlength\headheight{28pt}
+   \fancyhead[R]{\includegraphics[width=7cm]{logo3.png}}
+    \fancyhead[L]{\textbf{Post-Market Surveillance Costing Tool}}
+   \fancyfoot[LE,RO]{}
+   \usepackage{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+output:
+  pdf_document:
+    keep_tex: yes
+sansfont: Calibri
+---
+\fontsize{10}{16}
+\selectfont
+
+# Laporan Keluaran
+
+Laporan ini memberikan ikhtisar hasil Alat Pembiayaan PMS online. Informasi ini dimaksudkan untuk mendukung keputusan perencanaan dan penganggaran yang terkait dengan pelaksanaan kegiatan pengawasan Pasca Pasar. Perhitungan dan asumsi didasarkan pada aktivitas PMS yang dikembangkan oleh proyek Systematic Tracking of At Risk Medicines ([STARmeds](https://starmeds.id/)):
+
+- STARmeds mengumpulkan dan menguji lebih dari 1300 sampel obat antara Maret dan Juni 2022, dari empat provinsi di Indonesia, menggunakan teknik belanja misteri dan pengambilan sampel online.
+
+Alat Penetapan Biaya PMS ini adalah model penetapan biaya berbasis aktivitas, dilakukan dengan menggunakan pendekatan dari bawah ke atas, mengadopsi perspektif regulator layanan kesehatan (tidak termasuk biaya penelitian). Model ini menggunakan informasi yang diisi oleh pengguna toolkit di tabel input dan memperkirakan biaya total dan relatif dari pelaksanaan kegiatan PMS di lapangan. Biaya dikumpulkan berdasarkan jenis - yaitu pengeluaran dengan gaji dikumpulkan dengan mengalikan gaji dengan FTE, peralatan dikumpulkan berdasarkan kuantitas dan harga, dll - dan kemudian dialokasikan ke fase dan item yang berbeda. 
+
+## - Tabel Keluaran
+
+Tabel di bawah menunjukkan biaya berdasarkan fase proyek dan item sesuai dengan informasi yang diisi dalam perangkat, menyediakan analisis biaya instan dari biaya secara absolut dan relatif. Biaya disajikan dalam USD, nilai 2022. **Tabel 1** di bawah ini menunjukkan biaya yang dikumpulkan berdasarkan fase dan item proyek, **Tabel 2** menunjukkan biaya hanya berdasarkan fase dan **Tabel 3** menunjukkan biaya hanya berdasarkan item. Tabel input, yaitu tabel yang diisi oleh pengguna, juga disajikan dalam lampiran.
+\
+
+## Tabel 1 - Biaya berdasarkan fase dan item
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df7$data)
+```
+
+## Tabel 2 - Biaya berdasarkan item
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df8$data)
+```
+
+## Tabel 3 - Biaya berdasarkan fase
+```{r, echo=FALSE, results='asis'}
+knitr::kable({df9$data})
+```
+\
+
+
+**Gambar 1 dan 2** menunjukkan visualisasi grafis bagaimana biaya dibagi secara relatif terhadap total biaya.
+
+## Gambar 1 
+```{r, echo=FALSE, results='asis', out.width = "300px"}
+knitr::include_graphics("res_pie_cost_phase.png")
+```
+
+## Gambar 2
+```{r, echo=FALSE, results='asis', out.width = "300px"}
+knitr::include_graphics("res_pie_cost_item.png")
+```
+\pagebreak
+
+# **Lampiran - Tabel masukan**
+
+## Persiapan Studi
+
+### Tabel A1 - Sumber Daya Manusia
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df1$data)
+```
+
+### Tabel A2 - Biaya Lainnya
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df2$data)
+```
+
+## Kerja lapangan
+
+### Tabel A3 - Sampel obat yang akan dikumpulkan
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df3$data)
+```
+
+## Analisis dan pelaporan
+
+### Tabel A4 - Sumber Daya Manusia
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df4$data)
+```
+
+### Tabel A5 - Biaya Lainnya
+```{r, echo=FALSE, results='asis'}
+knitr::kable(df6$data)
+```
