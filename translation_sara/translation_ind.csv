@@ -7,7 +7,6 @@ Consultants,Konsultan
 Cost,Biaya
 Cost breakdown by cost item ,Kerusakan biaya berdasarkan barang biaya
 Cost breakdown by phase,Kerusakan biaya demi fase
-Cost item,Item biaya
 Costs,Biaya
 Costs by item,Biaya berdasarkan item
 Costs by phase,Biaya demi fase
@@ -16,7 +15,7 @@ Double click table cells to edit other cost items.,Klik dua sel meja untuk menge
 Double click table cells to edit staff positions and characteristics.,Klik dua sel meja untuk mengedit posisi dan karakteristik staf.
 entries,entri
 Fieldwork,Kerja lapangan
-Human resources ,Sumber daya manusia
+Human resources,Sumber daya manusia
 "Input below the TYPES of meds to be collected, separated by '; '","Input di bawah jenis obat yang akan dikumpulkan, dipisahkan oleh '; '"
 "Input below the TYPES of outlets from where meds will be collected, separated by '; '","Input di bawah jenis outlet dari mana obat -obatan akan dikumpulkan, dipisahkan oleh '; '"
 Inputs,Input
@@ -28,11 +27,9 @@ Months,Bulan
 Next,Berikutnya
 of ,dari
 Other costs,Biaya lainnya
-Phase,Fase
 Preparation,Persiapan
 Previous,Sebelumnya
 Results,Hasil
-Salary,Gaji
 Search,Mencari
 Senior Investigator,Penyelidik Senior
 Showing ,Menunjukkan
@@ -40,7 +37,7 @@ Study preparation,Persiapan studi
 Tables,Tabel
 The final tab “Results” produces a summary of expected costs based on the information you have provided.,"Tab akhir ""Hasil"" menghasilkan ringkasan biaya yang diharapkan berdasarkan informasi yang telah Anda berikan."
 "The table below will update automatically based on values inputted above. Once you are happy with the structure, double click each table cell to populate it with the target number of medicine samples to be collected for each medicine X outlet combination","Tabel di bawah ini akan diperbarui secara otomatis berdasarkan nilai yang dimasukkan di atas. Setelah Anda senang dengan struktur, klik dua kali setiap sel tabel untuk mengisinya dengan jumlah target sampel obat yang akan dikumpulkan untuk setiap kombinasi obat x outlet"
-The tool assumes that a generic PMS study entails three phases: preparing the study; collecting the medicine samples; and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases. ,Alat ini mengasumsikan bahwa studi PMS generik mensyaratkan tiga fase: mempersiapkan penelitian; mengumpulkan sampel obat; dan melaporkan hasilnya. Tiga tab berikut meminta informasi yang menangkap sumber daya yang diharapkan untuk digunakan di masing -masing dari tiga fase ini.
+"The tool assumes that a generic PMS study entails three phases: preparing the study, collecting the medicine samples, and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases.","Alat ini mengasumsikan bahwa studi PMS generik mensyaratkan tiga fase: mempersiapkan penelitian, mengumpulkan sampel obat, dan melaporkan hasilnya. Tiga tab berikut meminta informasi yang menangkap sumber daya yang diharapkan untuk digunakan di masing -masing dari tiga fase ini."
 This interactive calculator allows you to estimate the costs required to conduct your planned post-market surveillance study based on input data that you provide and explicit assumptions. The results are meant to be indicative and to be used only as a guide.,Kalkulator interaktif ini memungkinkan Anda untuk memperkirakan biaya yang diperlukan untuk melakukan studi pengawasan pasca-pasar yang Anda rencanakan berdasarkan data input yang Anda berikan dan asumsi eksplisit. Hasilnya dimaksudkan untuk menjadi indikasi dan hanya digunakan sebagai panduan.
 This table is informed by information provided in previous tabs.,Tabel ini diinformasikan oleh informasi yang disediakan di tab sebelumnya.
 to,ke
@@ -51,3 +48,17 @@ You have entered ',Anda telah masuk '
 Delete row,Hapus baris
 dashboard,dasbor
 Please report any issues at,Harap laporkan masalah apa pun di
+Example: street pharmacy; online pharmacy; clinics,Contoh: Apotek Jalanan; apotek online; Klinik
+Example: paracetamol 500mg tab; ibuprofen 400mg caps,Contoh: Parasetamol 500mg tab; IBuprofen 400mg Caps
+How to use?,Cara Penggunaan?
+"The table below will update automatically based on values inputted above. Once you are happy with the structure, double click each table cell to populate it with the average cost of buying sampled medicines","Tabel di bawah ini akan diperbarui secara otomatis berdasarkan nilai yang dimasukkan di atas. Setelah Anda senang dengan strukturnya, klik dua kali setiap sel tabel untuk mengisinya dengan biaya rata -rata membeli obat -obatan sampel"
+Sample collection rate,Tingkat pengumpulan sampel
+Cost of buying sampled medicines,Biaya membeli obat sampel
+Estimated number of fieldwork days:,Perkiraan jumlah hari kerja lapangan:
+Estimated cost per fieldwork day (1 to 10 million):,Perkiraan biaya per hari kerja lapangan (1 hingga 10 juta):
+The total estimated cost is ,Total perkiraan biaya adalah
+ unique types of outlets., Jenis outlet yang unik.
+Positions,Posisi
+Cost items,Barang biaya
+Monthly salary,Gaji bulanan
+Phase ,Fase  
