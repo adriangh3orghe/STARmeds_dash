@@ -24,9 +24,8 @@ library(png)
 
 
 #i18n <- Translator$new(translation_json_path='translation.json')
-#i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
+i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
 #i18n <- Translator$new(translation_csvs_path = "/Users/adriangheorghe/Documents/starmeds_shiny")
-i18n <- Translator$new(translation_csvs_path = "/Users/sara/Documents/GitHub/STARmeds_dash/translation_sara")
 
 i18n$set_translation_language('en')
 
@@ -38,7 +37,6 @@ dt_output = function(id, dt_title, dt_caption) {
                     p()),
              DTOutput(id))
 }
-
 
 # Define UI for web application
 ui <- fluidPage(
@@ -63,7 +61,7 @@ ui <- fluidPage(
                       #list of left hand tabs
                                  p(i18n$t("This interactive calculator allows you to estimate the costs required to conduct your planned post-market surveillance study based on input data that you provide and explicit assumptions. The results are meant to be indicative and to be used only as a guide.")),
                                  
-                                 p(i18n$t("The tool assumes that a generic PMS study entails three phases: preparing the study, collecting the medicine samples, and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases.")),
+                                 p(i18n$t("The tool assumes that a generic PMS study entails three phases: preparing the study; collecting the medicine samples; and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases.")),
                                  
                                  p(i18n$t("The final tab “Results” produces a summary of expected costs based on the information you have provided.")),
                       
@@ -97,7 +95,7 @@ ui <- fluidPage(
                  textInput(inputId = "fw_outletlist", 
                            label = i18n$t("Input below the TYPES of outlets from where meds will be collected, separated by '; '"), 
                            width = "100%",
-                           placeholder = "Example: street pharmacy; online pharmacy; clinics"),
+                           placeholder = i18n$t("Example: street pharmacy; online pharmacy; clinics")),
                  textOutput("fw_outletlist_value"),
                  p(),
                  dt_output("fw_sampleframe", i18n$t("Medicine samples to be collected"),
@@ -159,22 +157,22 @@ server <- function(input, output) {
   
     #Prep - hr costs
   
-    #define as dynamic object and load with initial data
-    df1 <- reactiveValues(data=NULL)
-    
-    dat1 <- reactive({
-      prep_hr_base <- data.frame(
-        Positions = c(i18n$t("Senior Investigator"),i18n$t("Data Manager")),
-        N_FTE = c(0.1, 1),
-        Months = c(3, 3),
-        Monthly_salary = c(200, 75),
-        Salary = c(NA, NA)
-      ) %>%
-        #function to calculate the last column (Salary) as product of previous columns
-        mutate(Salary = N_FTE * Monthly_salary * Months)
-      colnames(prep_hr_base) <- c(i18n$t("Positions"), "N_FTE",i18n$t("Months"), i18n$t("Monthly salary"), "Salary")
-      prep_hr_base
-    })
+  #define as dynamic object and load with initial data
+  df1 <- reactiveValues(data=NULL)
+  
+  dat1 <- reactive({
+    prep_hr_base <- data.frame(
+      Positions = c(i18n$t("Senior Investigator"),i18n$t("Data Manager")),
+      N_FTE = c(0.1, 1),
+      Months = c(3, 3),
+      Monthly_salary = c(200, 75),
+      Salary = c(NA, NA)
+    ) %>%
+      #function to calculate the last column (Salary) as product of previous columns
+      mutate(Salary = N_FTE * Monthly_salary * Months)
+    colnames(prep_hr_base) <- c(i18n$t("Positions"), "N_FTE",i18n$t("Months"), i18n$t("Monthly salary"), "Salary")
+    prep_hr_base
+  })
     
     #recalculate each time data change using function above
     observe({df1$data <- dat1()})
@@ -225,7 +223,6 @@ server <- function(input, output) {
         prep_other_base <- data.frame(
             `Cost items` = c(i18n$t("Meetings"), i18n$t("Travel"), i18n$t("Consultants")),
             Costs = c(1000, 2000, 4000))
-        colnames(prep_other_base) <- c(i18n$t("Cost items"), i18n$t("Costs"))
         prep_other_base
     })
     
@@ -370,7 +367,7 @@ server <- function(input, output) {
     cost_day <- reactive({ input$obs })
     
     output$fw_total_cost <- renderText({
-      paste0(i18n$t("The total estimated cost is"),(" "), total_days()*cost_day()," .")
+      paste0(i18n$t("The total estimated cost is"),(" "), total_days()*cost_day(), i18n$t(" ."))
     })
     
     #Analysis - hr costs
@@ -385,7 +382,6 @@ server <- function(input, output) {
         Salary = c(NA, NA))
       analysis_hr_base$Salary <- analysis_hr_base$N_FTE * analysis_hr_base$Monthly_salary *
         analysis_hr_base$Months
-      colnames(analysis_hr_base) <- c(i18n$t("Positions"), "N_FTE",i18n$t("Months"), i18n$t("Monthly salary"), "Salary")
       analysis_hr_base
     })
     
@@ -417,7 +413,6 @@ server <- function(input, output) {
       analysis_other_base <- data.frame(
         `Cost items` = c(i18n$t("Meetings"), i18n$t("Travel"), i18n$t("Consultants")),
         Costs = c(1000, 2000, 4000))
-      colnames(analysis_other_base) <- c(i18n$t("Cost items"), i18n$t("Costs"))
       analysis_other_base
     })
     
@@ -440,8 +435,8 @@ server <- function(input, output) {
                                analysis_hr(),
                                df6_mat()),
                   ncol = 3)
-      m <- as.data.frame(m, row.names = FALSE)
       colnames(m) <- c("Phase", "Cost.item", "Cost")
+      m <- as.data.frame(m, row.names = FALSE)
       m$Cost <- as.numeric(m$Cost)
       m$Percentage <- round(m$Cost/sum(m$Cost)*100, 1)
       m
@@ -461,7 +456,7 @@ server <- function(input, output) {
       x <- df7$data
       x$prop_cost <- round(df7$data$Cost*100/sum(df7$data$Cost), 1)
       x <- aggregate(x$prop_cost, list(x$Phase), FUN=sum)
-      colnames(x) <- c("Phase", "sum_prop")
+      colnames(x) <- c("phase", "sum_prop")
       x$csum <- rev(cumsum(rev(x$sum_prop)))
       x$pos <- x$sum_prop/2 + lead(x$csum, 1)
       x$pos <- ifelse(is.na(x$pos), x$sum_prop/2, x$pos)
@@ -501,7 +496,7 @@ server <- function(input, output) {
         geom_label_repel(dat8(),
                          mapping=aes(y = pos, label = paste0(sum_prop, "%")),
                          size = 4.5, nudge_x = 1, show.legend = FALSE) +
-        guides(fill = guide_legend(title = i18n$t("Phase"))) +
+        guides(fill = guide_legend(title = "Phase")) +
         theme_void()
       # Display the plot
       print(plot2)
