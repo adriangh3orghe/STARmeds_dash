@@ -61,7 +61,7 @@ ui <- fluidPage(
                       #list of left hand tabs
                                  p(i18n$t("This interactive calculator allows you to estimate the costs required to conduct your planned post-market surveillance study based on input data that you provide and explicit assumptions. The results are meant to be indicative and to be used only as a guide.")),
                                  
-                                 p(i18n$t("The tool assumes that a generic PMS study entails three phases: preparing the study; collecting the medicine samples; and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases.")),
+                                 p(i18n$t("The tool assumes that a generic PMS study entails three phases: preparing the study, collecting the medicine samples, and reporting the results. The following three tabs ask you for information that captures expected resources to be used in each of these three phases.")),
                                  
                                  p(i18n$t("The final tab “Results” produces a summary of expected costs based on the information you have provided.")),
                       
