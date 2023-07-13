@@ -15,8 +15,11 @@ output:
     keep_tex: yes
 sansfont: Calibri
 ---
-\fontsize{10}{16}
-\selectfont
+```{r load-packages, include=FALSE}
+library(dplyr)
+library(magrittr)
+library(knitr)
+```
 
 # Output Report
 
@@ -29,26 +32,28 @@ This PMS Costing Tool is an activity-based costing model, conducted using a bott
 ## - Output Tables
 
 The tables below show costs by project phase and items according to the information filled in the toolkit, providing instant cost analysis of costs in absolute and relative terms. Costs are presented in USD, 2022 values. **Table 1** below shows costs aggregated by project phase and item, **Table 2** shows costs only by phase and **Table 3** shows costs only by item. Input tables, i.e. the tables filled in by users, are also presented in appendix.
-\
+
 
 ## Table 1
 ```{r, echo=FALSE, results='asis'}
-knitr::kable(res.cost.detail$data)
+knitr::kable(res.cost.detail$data, format = "html")
 ```
+
 ## Table 2
 ```{r, echo=FALSE, results='asis'}
 knitr::kable(res.cost.phase$data)
 ```
+
 ## Table 3
 ```{r, echo=FALSE, results='asis'}
 knitr::kable(res.cost.item$data)
 ```
-\
+
 
 **Figures 1 and 2** show a graphic visualization how costs are divided in relative terms to the total costs.
 
 ## Figure 1 
-```{r, echo=FALSE, results='asis', out.width = "300px"}
+```{r, echo=FALSE, include=TRUE, results='asis', out.width = "300px"}
 knitr::include_graphics("plot1.png")
 ```
 
@@ -57,8 +62,6 @@ knitr::include_graphics("plot1.png")
 knitr::include_graphics("plot2.png")
 ```
 
-
-\pagebreak
 
 # **Appendix -  Input tables **
 
