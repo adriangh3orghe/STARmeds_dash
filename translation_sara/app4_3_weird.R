@@ -18,17 +18,21 @@ library("shiny.i18n")
 library("ggplot2")
 library("shinydashboard")
 library("bslib")
-library(htmlTable)
+#library(htmlTable)
 library("rmarkdown")
 library("markdown")
 library("png")
 library("plotly")
 library("orca")
 library("webshot")
-library("kableExtra")
+#library("kableExtra")
 library(knitr)
 library(dplyr)
-
+library(shinyjs)
+library(pdftools)
+library(systemfonts)
+library(magick)
+library(htmlwidgets)
 
 Sys.setenv("plotly_username" = "sara_almeida123")
 Sys.setenv("plotly_api_key" = "yNG8kkWFXvH1HJs2iBrS")
@@ -36,10 +40,10 @@ Sys.setenv("plotly_api_key" = "yNG8kkWFXvH1HJs2iBrS")
 #Initial declarations ####
 
 #i18n <- Translator$new(translation_json_path='translation.json')
-i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
+#i18n <- Translator$new(translation_csvs_path = "C:/Users/svalente/Desktop/shiny")
 #i18n <- Translator$new(translation_csvs_path = "/Users/adriangheorghe/Documents/starmeds_shiny")
 #i18n <- Translator$new(translation_csvs_path = ".", translation_csv_config = "config.yml")
-
+i18n <- Translator$new(translation_csvs_path = "/Users/sara/Desktop/STARmeds stuff/shiny")
 
 i18n$set_translation_language('en')
 
@@ -52,10 +56,11 @@ dt_output = function(id, dt_title, dt_caption) {
              DTOutput(id))
 }
 
+
 # Define UI for web application ####
 ui <- fluidPage(
   theme = bs_theme(bootswatch = "yeti"),
-  
+
   # Use i18n in UI
   usei18n(i18n),
   selectInput(
@@ -682,29 +687,32 @@ server <- function(input, output) {
 })
     webshot("plot1.html", file = "plot1.png")
     
-    output$res_pie_cost_item <- renderPlotly({
-      plot <- plot_ly(res.cost.item.fun(), labels = ~Item, values = ~Cost, type = 'pie') %>% 
-        layout(title = i18n$t("Costs by item"),
-               xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-               yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-      
-      # Save the plot as an HTML file
-      htmlwidgets::saveWidget(plot, "plot2.html", selfcontained = TRUE)
-      
-      # Return the plotly object
-      plot
-    })
-    
-    webshot("plot2.html", file = "plot2.png")
-    
-    #Results
-    output$tab_report <- renderText({
-      paste(i18n$t("Report"), input$text)
-    })
-    
+
+    # Download handler
+    output$downloadBtn <- downloadHandler(
+      filename = "report.pdf",  # Specify the filename for the downloaded PDF file
+      content = function(file) {
+        if (input$selected_language == "en") {
+          # Create the R Markdown content
+          rmarkdown::render("output_report_eng2.Rmd", output_file = file)
+        }
+        else if (input$selected_language  == "ind") {
+          # Create the R Markdown content
+          rmarkdown::render("output_report_ind2.Rmd", output_file = file)
+        }
+      }
+    )
     
     output$markdown <- renderUI({
-      markdown_content <- readLines('output_report_eng.rmd')
+      markdown_content <- 
+        if (input$selected_language == "en") {
+          # Create the R Markdown content
+          readLines('output_report_eng.rmd')
+        } 
+        else if (input$selected_language  == "ind") {
+          # Create the R Markdown content
+          readLines('output_report_ind.rmd')
+        } 
       knitted_content <- knitr::knit(text = markdown_content, quiet = TRUE)
       markdown_output <- markdown::markdownToHTML(knitted_content)
       styled_output <- paste(
@@ -724,22 +732,6 @@ server <- function(input, output) {
       HTML(styled_output)
     })
     
-    
-    
-    # Download handler
-    output$downloadBtn <- downloadHandler(
-      filename = "report.pdf",  # Specify the filename for the downloaded PDF file
-      content = function(file) {
-        if (input$selected_language == "en") {
-          # Create the R Markdown content
-          rmarkdown::render("output_report_eng.Rmd", output_file = file)
-        } 
-        else if (input$selected_language  == "ind") {
-          # Create the R Markdown content
-          rmarkdown::render("output_report_ind.Rmd", output_file = file)
-        } 
-      }
-    )
     
 }
 
