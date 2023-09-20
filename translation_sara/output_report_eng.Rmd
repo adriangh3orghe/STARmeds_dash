@@ -5,7 +5,7 @@ header-includes:
    \usepackage{fancyhdr}
    \pagestyle{fancy}
    \setlength\headheight{28pt}
-   \fancyhead[R]{\includegraphics[width=7cm]{logo3.png}}
+  # \fancyhead[R]{\includegraphics[width=7cm]{logo3.png}}
     \fancyhead[L]{\textbf{Post-Market Surveillance Costing Tool}}
    \fancyfoot[LE,RO]{}
    \usepackage{helvet}
@@ -15,6 +15,8 @@ output:
     keep_tex: yes
 sansfont: Calibri
 ---
+<!--\fontsize{10}{16}
+\selectfont-->
 
 # Output Report
 
@@ -57,7 +59,7 @@ knitr::include_graphics("plot2.png")
 ```
 
 
-\pagebreak
+# Appendix -  Input tables 
 
 ## Study Preparation
 

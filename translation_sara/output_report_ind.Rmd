@@ -5,7 +5,7 @@ header-includes:
    \usepackage{fancyhdr}
    \pagestyle{fancy}
    \setlength\headheight{28pt}
-   \fancyhead[R]{\includegraphics[width=7cm]{logo3.png}}
+  # \fancyhead[R]{\includegraphics[width=7cm]{logo3.png}}
     \fancyhead[L]{\textbf{Post-Market Surveillance Costing Tool}}
    \fancyfoot[LE,RO]{}
    \usepackage{helvet}
@@ -15,8 +15,8 @@ output:
     keep_tex: yes
 sansfont: Calibri
 ---
-\fontsize{10}{16}
-\selectfont
+<!--\fontsize{10}{16}
+\selectfont-->
 
 # Laporan Keluaran
 
@@ -29,7 +29,7 @@ Alat Perkiraan  Biaya PMS (PMS Costing Tool)  ini adalah model perkiraan biaya b
 ## - Tabel Keluaran
 
 Tabel di bawah menunjukkan biaya berdasarkan fase proyek dan item sesuai dengan informasi yang diisi dalamtoolkit , memaparkan analisis biaya instan dari biaya absolut dan relatif. Biaya ditampilkan  dalam USD, nilai tahun 2022. **Tabel 1** di bawah ini menunjukkan biaya yang dikumpulkan berdasarkan fase proyek dan item, **Tabel 2** menunjukkan biaya hanya berdasarkan fase dan **Tabel 3** menunjukkan biaya hanya berdasarkan item. Tabel input, yaitu tabel yang diisi oleh pengguna, juga ditampilkan dalam lampiran.
-\
+
 
 ## Tabel 1 - Biaya berdasarkan fase dan item
 ```{r, echo=FALSE, results='asis'}
@@ -45,8 +45,7 @@ knitr::kable(res.cost.phase$data)
 ```{r, echo=FALSE, results='asis'}
 knitr::kable(res.cost.item$data)
 ```
-\
-
+<br/> <br/>
 
 **Gambar 1 dan 2** menunjukkan visualisasi grafis bagaimana biaya dibagi secara relatif terhadap total biaya.
 
@@ -60,7 +59,7 @@ knitr::include_graphics("plot1.png")
 knitr::include_graphics("plot1.png")
 ```
 
-\pagebreak
+
 
 # **Lampiran - Tabel masukan**
 
