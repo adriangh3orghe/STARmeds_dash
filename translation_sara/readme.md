@@ -9,7 +9,8 @@ Link to googlesheet with translation function:
 https://docs.google.com/spreadsheets/d/11DncuKYrns6HTVeMt9rR50tH3TyhjbwYlw4dcGwyAMY/edit?usp=sharing
 
 Versions:
-
+app4_4 -> only one download button for both languages in a new tab + report showing automatically at the end
+app4_3 -> only one download button for both languages in a new tab. code contains attempts to show html in tab. 
 app4_2 -> new version with more tables, translation and report in english and indonesian
 
-app4_3 -> only one download button for both languages in a new tab. code contains attempts to show html in tab. 
+
