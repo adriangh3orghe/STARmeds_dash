@@ -1,1 +1,24 @@
-provision.yml
+  packages:
+  - bslib
+  - dplyr
+  - DT
+  - ggplot2
+  - ggrepel
+  - htmlwidgets
+  - knitr
+  - magick
+  - magrittr
+  - markdown
+  - orca
+  - pdftools
+  - plotly
+  - png
+  - rmarkdown
+  - rsconnect
+  - shiny
+  - shiny.i18n
+  - shinydashboard
+  - shinyjs
+  - systemfonts
+  - tidyverse
+  - webshot
