@@ -1,0 +1,96 @@
+en,ind
+ unique types of medicines.,jenis obat tertentu.
+ unique types of outlets.,Jenis outlet tertentu.
+Add column,Tambahkan kolom
+Add row,Tambahkan baris
+Analysis and reporting,Analisis dan pelaporan
+API concentration,konsentrasi API
+Change language,Ganti Bahasa
+Consultants,Konsultan
+Cost,Biaya
+Cost breakdown by cost item ,Perincian biaya per komponen
+Cost breakdown by phase,Perincian biaya per fase
+Cost item,Item biaya
+Cost of buying sampled medicines,Biaya membeli obat sampel
+Costs,Biaya
+Costs by item,Biaya berdasarkan item
+Costs by phase,Biaya berdasarkan fase
+Costs by type of item,Biaya berdasarkan jenis barang
+Cost per out-of-specification sample,Biaya per sampel di luar spesifikasi
+dashboard,dasbor
+Data Manager,Manajer data
+Delete row,Hapus baris
+Dissolution,Pembubaran
+Double click table cells to edit laboratory tests and unit costs.,Klik dua kali cell pada tabel untuk mengedit tes laboratorium dan biaya satuan.
+Double click table cells to edit other cost items.,Klik dua kali cell pada tabel untuk edit item biaya lainnya.
+Double click table cells to edit staff positions and characteristics.,Klik dua kali cell pada tabel untuk edit posisi staf dan karakteristik.
+entries,entri
+Estimated cost per fieldwork day (1 to 10 million):,Perkiraan biaya per hari kerja lapangan (1 hingga 10 juta):
+Estimated cost per out-of-specification sample detected,Perkiraan biaya per sampel di luar spesifikasi yang terdeteksi
+Estimated days,Perkiraan hari
+Estimated number of fieldwork days:,Perkiraan jumlah hari kerja lapangan:
+Estimated out-of-specification samples,Estimasi sampel di luar spesifikasi
+Fieldwork,Kerja lapangan
+FTE,FTE
+How to use?,Bagaimana cara menggunakannya?
+Human resources,Sumber daya manusia
+"In the table below, change the expected prevalence (%) of out-of-specification (OOS) samples to obtain estimated costs per OOS sample detected.","Pada tabel di bawah, ubah prevalensi yang diharapkan (%) dari sampel di luar spesifikasi (OOS) untuk mendapatkan perkiraan biaya per sampel OOS yang terdeteksi."
+"Input below the TYPES of meds to be collected, separated by '; '. For example: paracetamol 500mg tab; ibuprofen 400mg caps",",""Masukkan di bawah ini JENIS obat yang akan disampling. Contoh: paracetamol 500mg tab; ibuprofen 400mg kap"
+"Input below the TYPES of outlets from where meds will be collected, separated by '; '. For example: street pharmacy; online pharmacy; clinics",",""Masukkan di bawah ini JENIS outlet tempat sampling obat. Contoh: apotek jalanan; apotek daring; klinik"
+Inputs,Input
+Introduction,Perkenalan
+Item,Item
+Laboratory costs,Biaya laboratorium
+", leading to an estimated cost per sample collected of ",", yang mengarah ke perkiraan biaya per sampel yang dikumpulkan dari "
+Medicine,Obat
+ medicine samples at a total cost of , sampel obat dengan total biaya 
+Medicine samples to be collected,Sampel obat untuk disampling
+Meetings,Rapat
+Monthly salary,Gaji bulanan
+Months,Bulan
+N_samples,N_sampel
+Next,Berikutnya
+of ,dari
+Other costs,Biaya lainnya
+Percentage,Persentase
+Phase,Fase
+Please report any issues at,Harap laporkan masalah apa pun pada
+Positions,Posisi
+Preparation,Persiapan
+Prevalence,Prevalensi
+Previous,Sebelumnya
+Price per sample,Harga per sampel
+Purchase cost,Biaya pembelian
+Results,Hasil
+Salary,Gaji
+Sample collection rate,Tingkat pengumpulan sampel
+Samples per day,Sampel per hari
+Search,Cari
+Senior Investigator,Penyelidik Senior
+Showing ,Menunjukkan
+Study preparation,Persiapan studi
+Summary of costs,Ringkasan biaya
+Tables,Tabel
+Target number of samples,Target jumlah sampel
+Test,Tes
+The following three tabs ask you for information that captures expected resources to be used in each of these three phases.,Tiga tab berikut meminta informasi yang menangkap sumber daya yang diharapkan untuk digunakan di masing -masing dari tiga fase ini.
+The Results section produces a summary of expected costs based on the information you have provided.,"Tab akhir ""Hasil"" memuat ringkasan ekspektasi biaya berdasarkan informasi yang telah Anda berikan."
+The study aims to collect ,Penelitian bertujuan untuk mengumpulkan 
+"The table below will update automatically based on values inputted above. Once you are happy with the structure, double click each table cell to populate it with the average cost of buying sampled medicines","Tabel di bawah ini akan diperbarui secara otomatis berdasarkan nilai yang dimasukkan di atas. Setelah Anda puas dengan strukturnya, klik dua kali setiap sel tabel untuk mengisinya dengan biaya rata-rata untuk membeli sampel obat"
+"The table below will update automatically based on values inputted above. Once you are happy with the structure, double click each table cell to populate it with the target number of medicine samples to be collected for each medicine X outlet combination","Tabel di bawah ini akan diperbarui secara otomatis berdasarkan nilai yang dimasukkan di atas. Setelah Anda senang dengan struktur, klik dua kali setiap sel tabel untuk mengisinya dengan jumlah target sampel obat yang akan dikumpulkan untuk setiap kombinasi obat x outlet"
+"The tool assumes that a generic PMS study entails three phases: preparing the study, collecting the medicine samples, and reporting the results.",Alat ini mengasumsikan bahwa studi PMS generik mensyaratkan tiga fase: mempersiapkan penelitian mengumpulkan sampel obat dan melaporkan hasilnya. 
+The total estimated cost of fieldwork is,Total perkiraan biaya adalah
+This interactive calculator allows you to estimate the costs required to conduct your planned post-market surveillance study based on input data that you provide and explicit assumptions. The results are meant to be indicative and to be used only as a guide.,Kalkulator interaktif ini memungkinkan Anda untuk memperkirakan biaya yang diperlukan untuk melakukan studi pengawasan pasca pasar yang Anda rencanakan berdasarkan data input yang Anda berikan dan asumsi eksplisit. Hasilnya hanya berupa perkiraan dan hanya digunakan sebagai panduan.
+This table is informed by information provided in previous tabs.,Tabel ini diinformasikan oleh informasi yang disediakan di tab sebelumnya.
+to,ke
+Toolkit,Perangkat alat
+Total HR cost is ,Total biaya sumber daya manusia adalah '
+Travel,Perjalanan
+Unit_cost,Unit_biaya
+Unit cost,Unit biaya
+Value for money,Nilai untuk uang
+Visuals,Visual
+You have entered ',Anda telah memasukkan '
+Report,Laporan
+"To download report based on your inputs, please press the download button below.","Untuk mengunduh laporan berdasarkan masukan anda, silakan tekan tombol unduh di bawah ini."
+"Estimated budget per fieldwork day, INCLUDING staff, equipment, consumables, rent etc. and EXCLUDING the cost of buying sampled medicines:","Perkiraan anggaran per hari kerja lapangan, TERMASUK staf, peralatan, barang habis pakai, sewa dll. dan TIDAK TERMASUK biaya pembelian sampel obat-obatan:"
